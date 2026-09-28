@@ -163,6 +163,10 @@ ghostrider ghostrider
 mike mike
 minotaurx minotaurx
 flex flex
+equihash equihash
+equihash144 equihash144
+equihash192 equihash192
+yespowerRES yespowerRES
 ALGOS
 EOF
 sudo chmod 755 "$STORAGE_ROOT/yiimp/starts/stratum.start.sh"
