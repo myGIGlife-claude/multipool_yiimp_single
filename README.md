@@ -1,7 +1,7 @@
 # multipool_yiimp_single
 Installation files for YiiMP single server
 
-#### These files do nothing on their own. Please go to https://github.com/mygiglifeinc-glitch/Multi-Pool-Installer
+#### These files do nothing on their own. Please go to https://github.com/myGIGlife-claude/Multi-Pool-Installer
 
 ## Supported systems
 
@@ -16,7 +16,7 @@ Installation files for YiiMP single server
 - PHP is installed from the [Ondrej PHP PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php)
   using the `PHP_VERSION` set in `/etc/multipool.conf` (falls back to the Ubuntu PHP packages on
   releases the PPA does not support yet). MariaDB, nginx and certbot come from Ubuntu.
-- The YiiMP source is cloned from https://github.com/mygiglifeinc-glitch/yiimp. To install from a
+- The YiiMP source is cloned from https://github.com/myGIGlife-claude/yiimp. To install from a
   fork set `YIIMP_REPO` (and optionally `YIIMP_BRANCH`) in the environment before starting the installer.
 - Database user names and passwords are saved in `$STORAGE_ROOT/yiimp/.my.cnf` (readable by the
   installing user only).
@@ -79,4 +79,4 @@ extra steps on the coin daemons.
   - Set the coin's *RPC Type* to `XMR`.
   - Add the wallet to `serverconfig.php`: `$configWalletRPC['XMR'] = 'host:port:user:pass';`. Without that line it is expected on the daemon host at RPC port + 1.
 - **Testing:** payouts have been tested only once, on a private test network.
-- To connect a different stratum program (for algos this stratum can't handle), see [docs/BRIDGE.md](https://github.com/mygiglifeinc-glitch/yiimp/blob/next/docs/BRIDGE.md) in the YiiMP source.
+- To connect a different stratum program (for algos this stratum can't handle), see [docs/BRIDGE.md](https://github.com/myGIGlife-claude/yiimp/blob/next/docs/BRIDGE.md) in the YiiMP source.
