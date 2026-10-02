@@ -57,7 +57,6 @@ while true; do
 	./stratum "config/\$1"
 	sleep 2
 done
-exec bash
 EOF
 sudo chmod 755 "$STORAGE_ROOT/yiimp/site/stratum/config/run.sh"
 

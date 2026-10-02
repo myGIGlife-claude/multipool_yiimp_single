@@ -15,14 +15,17 @@ Installation files for YiiMP single server
 
 - PHP is installed from the [Ondrej PHP PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php)
   using the `PHP_VERSION` set in `/etc/multipool.conf` (falls back to the Ubuntu PHP packages on
-  releases the PPA does not support yet). MariaDB, nginx and certbot come from Ubuntu.
+  releases the PPA does not support yet: Ubuntu 26.04 gets its own PHP 8.5). MariaDB, nginx and
+  certbot come from Ubuntu.
 - The YiiMP source is cloned from https://github.com/myGIGlife-claude/yiimp. To install from a
   fork set `YIIMP_REPO` (and optionally `YIIMP_BRANCH`) in the environment before starting the installer.
 - Database user names and passwords are saved in `$STORAGE_ROOT/yiimp/.my.cnf` (readable by the
   installing user only).
-- `stratum start|stop|restart <algo>` starts or stops the stratum of one algo. Most
-  Bitcoin-stratum algos, Equihash and yespowerRES start at boot. The KawPoW family and randomx
-  must be started by hand.
+- `stratum start|stop|restart <algo>` starts or stops the stratum of one algo. Without dedicated
+  coin ports, most Bitcoin-stratum algos, Equihash and yespowerRES start at boot. The KawPoW
+  family and randomx must be started by hand.
+- `max_cons_per_ip` in the `[STRATUM]` section of an algo's `.conf` limits the connections from
+  one IP address (IPv6: per /64). The default `0` means no limit.
 - The `verthash` stratum (Vertcoin) needs its 1.2 GB data file. Create it once:
   `cd $STORAGE_ROOT/yiimp/site/stratum && ./verthash_gen verthash.dat`.
 
