@@ -65,9 +65,7 @@ cd "$HOME/multipool/yiimp_single" || exit 1
 #Updating YiiMP files for cryptopool.builders build
 echo -e " Adding the cryptopool.builders flare to YiiMP...$COL_RESET"
 
-sudo sed -i "s/YII MINING POOLS/${DomainName} Mining Pool/g" "$STORAGE_ROOT/yiimp/site/web/yaamp/modules/site/index.php"
 sudo sed -i "s/domain/${DomainName}/g" "$STORAGE_ROOT/yiimp/site/web/yaamp/modules/site/index.php"
-sudo sed -i 's/Notes/AddNodes/g' "$STORAGE_ROOT/yiimp/site/web/yaamp/models/db_coinsModel.php"
 for php_file in web/index.php web/runconsole.php web/run.php web/yaamp/yiic.php web/yaamp/modules/thread/CronjobController.php; do
 	sudo sed -i "s|serverconfig.php|${STORAGE_ROOT}/yiimp/site/configuration/serverconfig.php|g" "$STORAGE_ROOT/yiimp/site/$php_file"
 done
